@@ -1,0 +1,507 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyframes Animation</title>
+  <link rel="stylesheet" href="{% static 'static/form.css' %}">
+  {% for item in context %}
+    <li>{{item.name}}</li>
+    {% endfor %}
+  <div class="animated-div">Watch me animate!</div>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+		background-image:url("D:\pexels-photo-1205651.webp");
+		background-size:100% 100% ;
+		animation:change 20s infinite ease-in-out;
+        }
+@keyframes change{
+    0%
+    {
+        background-image: url(D:\image1a.jpg);
+    }
+    20%
+    {
+        background-image: url(D:\pexels-photo-1205651.webp);
+    }
+    40%
+    {
+        background-image: url(D:\image2a.jpg);
+    }
+    60%
+    {
+        background-image: url(D:\image3a.jpg);
+    }
+    80%
+    {
+        background-image: url(D:\image4a.jpg);
+    }
+    100%
+    {
+        background-image: url(D:\image5a.jpg);
+    }
+}
+        .form-container {
+            max-width: 500px;
+            margin: 500px 100px 80pxp 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		background-color:rgba(0,0,0,0.4);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+color:white;
+        }
+ .form-group input{
+	border-radius:20px;
+	border:2px solid whhite;
+}
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+		border-radius:20px;
+border:2px solid whhite;
+
+		
+		
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="form-container">
+            <h2>Admission Form</h2>
+            <! <form method="POST" id="admissionform">>
+            <form action="admissioncode">
+            {% csrf_token %}
+            <form id="admissionForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="fathersName">Father's Name</label>
+                <input type="text" id="fathersName" name="fathersName" required>
+            </div>
+            <div class="form-group">
+                <label for="mothersName">Mother's Name</label>
+                <input type="text" id="mothersName" name="mothersName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Entrance Exam Marks</label>
+                <input type="tel" id="jee_marks" name="jee_marks"  required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" value="India" readonly>
+            </div>
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select Course --</option>
+                    <option value="BTECH">BTECH</option>
+                    <option value="BSC">BSC</option>
+                    <option value="BA">BA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="BCOM">BCOM</option>
+                    <option value="MCOM">MCOM</option>
+                    <option value="MSC">MSC</option>
+                    <option value="MA">MA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state" required>
+                    <option value="">-- Select State --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="West Bengal">West Bengal</option>
+                  <option value="Bihar">Bihar</option>
+                    <!-- Add more states -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <select id="city" name="city" required>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="hydrebad">Hydrebad</option>
+                    <option value="bangalore">Bangalore</option>
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        const stateCityMapping = {
+            "Delhi": ["New Delhi", // Capital City
+  "Delhi Cantonment",
+  "North Delhi",
+  "South Delhi",
+  "East Delhi",
+  "West Delhi",
+  "Central Delhi",
+  "Shahdara",
+  "North West Delhi",
+  "South West Delhi",
+  "New Ashok Nagar",
+  "Dwarka",
+  "Karol Bagh",
+  "Kashmere Gate",
+  "Lajpat Nagar",
+  "Connaught Place",
+  "Vikaspuri",
+  "Rohini",
+  "Pitampura",
+  "Rajouri Garden",
+  "Hari Nagar",
+  "Chandni Chowk",
+  "Saket",
+  "Greater Kailash",
+  "Malviya Nagar",
+  "Okhla",
+  "Paharganj",
+  "Rajiv Chowk",
+  "Munirka",
+  "Jangpura",
+  "Vasant Kunj",
+  "Najafgarh",
+  "Narela",
+  "Burari",
+  "Moti Nagar"],
+            "Maharashtra":[
+  "Mumbai", // Capital City
+  "Pune",
+  "Nagpur",
+  "Nashik",
+  "Thane",
+  "Aurangabad",
+  "Solapur",
+  "Kolhapur",
+  "Satara",
+  "Jalgaon",
+  "Amravati",
+  "Chandrapur",
+  "Ratnagiri",
+  "Beed",
+  "Bhandara",
+  "Gadchiroli",
+  "Latur",
+  "Nanded",
+  "Dhule",
+  "Akola",
+  "Palghar",
+  "Parbhani",
+  "Yavatmal",
+  "Bhusawal",
+  "Kalyan",
+  "Karad",
+  "Shirdi",
+  "Ichalkaranji",
+  "Bhiwandi",
+  "Dombivli",
+  "Washi",
+  "Mira-Bhayandar",
+  "Khandala",
+  "Khargar",
+  "Vasai-Virar",
+  "Vengurla",
+  "Chiplun",
+  "Pimpri-Chinchwad",
+  "Sangli",
+  "Ratnagiri",
+  "Hingoli",
+  "Sindhudurg",
+  "Wardha",
+  "Sangamner",
+  "Navi Mumbai"
+],
+            "Karnataka": [ "Bengaluru",
+  "Mysuru",
+  "Mangalore",
+  "Hubballi",
+  "Dharwad",
+  "Belagavi",
+  "Ballari",
+  "Bidar",
+  "Chikkamagaluru",
+  "Davangere",
+  "Hassan",
+  "Tumakuru",
+  "Raichur",
+  "Kolar",
+  "Bijapur",
+  "Chitradurga",
+  "Bagalkot",
+  "Koppal",
+  "Udupi",
+  "Gadag",
+  "Mandya",
+  "Challakere",
+  "Karwar",
+  "Shimoga",
+  "Sagar",
+  "Yadgir",
+  "Ramanagaram",
+  "Haveri",
+  "Kodagu",
+  "Chikkaballapur",
+  "Karkala",
+  "Hosapete",
+  "Srinivaspur",
+  "Aland",
+  "Kanakapura",
+  "Puttur",
+  "Sirsi",
+  "Nargund",
+  "Muddebihal"],
+            "Tamil Nadu": [ "Chennai", // Capital City
+  "Coimbatore",
+  "Madurai",
+  "Tiruchirappalli",
+  "Salem",
+  "Tirunelveli",
+  "Erode",
+  "Vellore",
+  "Dindigul",
+  "Thanjavur",
+  "Karur",
+  "Chidambaram",
+  "Tirupur",
+  "Nagercoil",
+  "Kanchipuram",
+  "Cuddalore",
+  "Virudhunagar",
+  "Nagapattinam",
+  "Kumbakonam",
+  "Sivakasi",
+  "Ramanathapuram",
+  "Pudukkottai",
+  "Theni",
+  "Tiruvannamalai",
+  "Villupuram",
+  "Ariyalur",
+  "Karaikal",
+  "Kanniyakumari",
+  "Krishnagiri",
+  "Vikramasingapuram",
+  "Perambalur",
+  "Thiruvallur",
+  "Chengalpattu",
+  "Tirupattur",
+  "Pollachi",
+  "Mettur",
+  "Sankarankovil",
+  "Kovilpatti"],
+            "Uttar Pradesh": ["Lucknow",
+  "Kanpur",
+  "Varanasi",
+  "Agra",
+  "Meerut",
+  "Ghaziabad",
+  "Noida",
+  "Allahabad (Prayagraj)",
+  "Aligarh",
+  "Moradabad",
+  "Bareilly",
+  "Saharanpur",
+  "Firozabad",
+  "Jhansi",
+  "Gorakhpur",
+  "Faizabad (Ayodhya)",
+  "Mathura",
+  "Shahjahanpur",
+  "Rampur",
+  "Etawah",
+  "Muzaffarnagar",
+  "Lakhimpur",
+  "Sitapur",
+  "Banda",
+  "Gonda",
+  "Sultanpur",
+  "Amroha",
+  "Bahraich",
+  "Ballia",
+  "Basti",
+  "Bijnor",
+  "Bulandshahr",
+  "Fatehpur",
+  "Hapur",
+  "Hardoi",
+  "Jaunpur",
+  "Kanpur Dehat",
+  "Mau",
+  "Pilibhit",
+  "Rae Bareli",
+  "Sambhal",
+  "Sant Kabir Nagar",
+  "Unnao",
+  "Azamgarh",
+  "Mirzapur",
+  "Chandauli",
+  "Deoria",
+  "Mainpuri",
+  "Kasganj",
+  "Farrukhabad",
+  "Kannauj",
+  "Amethi",
+  "Raebareli"],
+            "Rajasthan": [  "Jaipur",
+  "Jodhpur",
+  "Udaipur",
+  "Ajmer",
+  "Kota",
+  "Bikaner",
+  "Alwar",
+  "Bharatpur",
+  "Pushkar",
+  "Chittorgarh",
+  "Sikar",
+  "Jhunjhunu",
+  "Pali",
+  "Bundi",
+  "Tonk",
+  "Jaisalmer",
+  "Nagaur",
+  "Churu",
+  "Hanumangarh",
+  "Sri Ganganagar",
+  "Dungarpur",
+  "Barmer",
+  "Jhalawar",
+  "Karauli",
+  "Ranthambore",
+  "Raisinghnagar",
+  "Baran",
+  "Ratangarh",
+  "Banswara",
+  "Abu Road",
+  "Mount Abu",
+  "Pratapgarh",
+  "Beawar",
+  "Sawai Madhopur",
+  "Neemrana",
+  "Makrana",
+  "Phalodi",
+  "Rajsamand",
+  "Kishangarh"
+],
+          "West Bengal":["Kolkata","Howrah","Durgapur","Asansol","Siliguri","Darjeeling","Bardhaman","Kharagpur","Haldia","Raiganj","Krishnanagar","Chandannagar","Baharampur","Malda","Jalpaiguri","Cooch Behar","Balurghat","Bongaon",
+                         "Habra","Tamluk","Basirhat","Kalimpong","Medinipur","Rampurhat","Raniganj","Suri,Bankura","Purulia","Alipurduar"],
+          "Bihar":["Patna",
+  "Gaya",
+  "Bhagalpur",
+  "Muzaffarpur",
+  "Darbhanga",
+  "Purnia",
+  "Bihar Sharif",
+  "Ara (Arrah)",
+  "Begusarai",
+  "Katihar",
+  "Munger (Monghyr)",
+  "Chhapra (Saran)",
+  "Samastipur",
+  "Saharsa",
+  "Siwan",
+  "Motihari (East Champaran)",
+  "Bettiah (West Champaran)",
+  "Hajipur",
+  "Dehri",
+  "Jamalpur",
+  "Sitamarhi",
+  "Madhubani",
+  "Buxar",
+  "Nalanda",
+  "Sasaram",
+  "Sheikhpura",
+  "Aurangabad",
+  "Lakhisarai",
+  "Jehanabad",
+  "Kishanganj",
+  "Khagaria",
+  "Araria",
+  "Nawada",
+  "Madhepura",
+  "Rajgir",
+  "Phulwari Sharif"],
+          
+            // Add more mappings
+        };
+
+        const stateSelect = document.getElementById('state');
+        const citySelect = document.getElementById('city');
+
+        stateSelect.addEventListener('change', function() {
+            const selectedState = this.value;
+            const cities = stateCityMapping[selectedState] || [];
+
+            citySelect.innerHTML = '<option value="">-- Select City --</option>';
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        });
+
+        document.getElementById('admissionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>

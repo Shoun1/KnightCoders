@@ -1,0 +1,80 @@
+  body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+		background-image:url("D:\pexels-photo-1205651.webp");
+		background-size:100% 100% ;
+		animation:change 20s infinite ease-in-out;
+        }
+@keyframes change{
+    0%
+    {
+        background-image: url(D:\image1a.jpg);
+    }
+    20%
+    {
+        background-image: url(D:\pexels-photo-1205651.webp);
+    }
+    40%
+    {
+        background-image: url(D:\image2a.jpg);
+    }
+    60%
+    {
+        background-image: url(D:\image3a.jpg);
+    }
+    80%
+    {
+        background-image: url(D:\image4a.jpg);
+    }
+    100%
+    {
+        background-image: url(D:\image5a.jpg);
+    }
+}
+        .form-container {
+            max-width: 500px;
+            margin: 500px 100px 80pxp 100px;
+            padding: 20px;
+            
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		background-color:rgba(0,0,0,0.4);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+color:white;
+        }
+ .form-group input{
+	border-radius:20px;
+	border:2px solid whhite;
+}
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+		border-radius:20px;
+border:2px solid whhite;
+
+		
+		
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
